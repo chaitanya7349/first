@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?logo=fastapi)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite)
+![License](https://img.shields.io/badge/License-MIT-green)
 # AI Recruitment System
 
 An AI-powered Recruitment System that automates resume screening, candidate ranking, and job matching using NLP and Machine Learning techniques.
