@@ -101,3 +101,40 @@ npm run dev
 MCA Final Year Project
 
 AI Recruitment System
+---
+
+# Application Screenshots
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## Upload Resume
+
+![Upload Resume](screenshots/upload-resume.png)
+
+---
+
+## Upload Job
+
+![Upload Job](screenshots/upload-job.png)
+
+---
+
+## Candidates
+
+![Candidates](screenshots/candidates.png)
+
+---
+
+## Candidate Ranking
+
+![Candidate Ranking](screenshots/ranking.png)
+
+---
+
+## Candidate Details
+
+![Candidate Details](screenshots/candidate-details.png)
