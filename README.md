@@ -3,12 +3,18 @@
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
 # AI Recruitment System
 
-An AI-powered Recruitment System that automates resume screening, candidate ranking, and job matching using NLP and Machine Learning techniques.
+An AI-powered Recruitment System that automates resume screening, candidate ranking, job matching, and recruiter authentication using NLP and Machine Learning techniques.
+
+---
 
 ## Features
 
+- Recruiter Authentication (JWT Login)
+- Protected Routes
+- Recruiter Logout
 - Upload Resume (PDF)
 - Resume Parsing
 - Upload Job Description
@@ -16,10 +22,12 @@ An AI-powered Recruitment System that automates resume screening, candidate rank
 - AI Candidate Ranking
 - Resume Scoring
 - Candidate Search
-- Candidate Details Page
+- Candidate Details
 - Download Resume
 - Dashboard Analytics
 - Duplicate Resume Detection
+
+---
 
 ## Tech Stack
 
@@ -34,6 +42,7 @@ An AI-powered Recruitment System that automates resume screening, candidate rank
 - Python
 - SQLAlchemy
 - SQLite
+- JWT Authentication
 
 ### AI & NLP
 - Resume Parsing
@@ -41,13 +50,19 @@ An AI-powered Recruitment System that automates resume screening, candidate rank
 - Candidate Matching
 - Resume Scoring
 
+---
+
 ## Project Structure
 
-```
+```text
 AI-Recruitment-System
 │
 ├── backend
 │   ├── app
+│   ├── api
+│   ├── auth
+│   ├── database
+│   ├── services
 │   ├── uploads
 │   ├── requirements.txt
 │   └── recruitment.db
@@ -57,8 +72,12 @@ AI-Recruitment-System
 │   ├── public
 │   └── package.json
 │
+├── screenshots
+│
 └── README.md
 ```
+
+---
 
 ## Installation
 
@@ -78,26 +97,34 @@ npm install
 npm run dev
 ```
 
+---
+
 ## Project Workflow
 
-1. Upload Resume
-2. Resume Parsing
-3. Upload Job Description
-4. Extract Required Skills
-5. Match Candidate Skills
-6. Calculate Resume Score
-7. Rank Candidates
-8. View Candidate Details
-9. Download Resume
+1. Recruiter Login (JWT Authentication)
+2. Upload Resume
+3. Resume Parsing
+4. Upload Job Description
+5. Extract Required Skills
+6. Match Candidate Skills
+7. Calculate Resume Score
+8. Rank Candidates
+9. View Candidate Details
+10. Download Resume
+11. Recruiter Logout
+
+---
 
 ## Future Enhancements
 
-- Admin Login
 - Email Notifications
 - Interview Scheduling
-- Cloud Database
-- Resume Recommendation
+- Cloud Database (PostgreSQL/MySQL)
+- AI Resume Recommendation
 - AI Interview Assistant
+- Multi-Recruiter Role Management
+
+---
 
 ## Developer
 
@@ -105,10 +132,15 @@ npm run dev
 
 MCA Final Year Project
 
-AI Recruitment System
 ---
 
 # Application Screenshots
+
+## Recruiter Login
+
+![Recruiter Login](screenshots/login.png)
+
+---
 
 ## Dashboard
 
@@ -143,3 +175,9 @@ AI Recruitment System
 ## Candidate Details
 
 ![Candidate Details](screenshots/candidate-details.png)
+
+---
+
+## License
+
+This project is developed for educational and learning purposes as part of an MCA Final Year Project.

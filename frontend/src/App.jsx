@@ -1,6 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
+import Sidebar from "./components/Sidebar";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import Login from "./pages/login";
 import Dashboard from "./pages/Dashboard";
 import UploadResume from "./pages/uploadResume";
 import UploadJob from "./pages/uploadjob";
@@ -8,35 +16,95 @@ import Candidates from "./pages/candidates";
 import Ranking from "./pages/Ranking";
 import CandidateDetails from "./pages/CandidateDetails";
 
-function App() {
+function Layout() {
+  const location = useLocation();
+
+  const showSidebar =
+    location.pathname !== "/" &&
+    location.pathname !== "/login";
+
   return (
-  <BrowserRouter>
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      {showSidebar && <Sidebar />}
 
       <div
         style={{
-          marginLeft: "250px",
+          marginLeft: showSidebar ? "250px" : "0",
           width: "100%",
-          padding: "20px",
+          padding: showSidebar ? "20px" : "0",
         }}
       >
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/upload-resume" element={<UploadResume />} />
-          <Route path="/upload-job" element={<UploadJob />} />
-          <Route path="/candidates" element={<Candidates />} />
-          <Route path="/ranking" element={<Ranking />} />
+          {/* Login */}
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
           <Route
-    path="/candidate/:id"
-    element={<CandidateDetails />}
-/>
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/upload-resume"
+            element={
+              <ProtectedRoute>
+                <UploadResume />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/upload-job"
+            element={
+              <ProtectedRoute>
+                <UploadJob />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/candidates"
+            element={
+              <ProtectedRoute>
+                <Candidates />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/ranking"
+            element={
+              <ProtectedRoute>
+                <Ranking />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/candidate/:id"
+            element={
+              <ProtectedRoute>
+                <CandidateDetails />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </div>
-  </BrowserRouter>
-);
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
+  );
 }
 
 export default App;
