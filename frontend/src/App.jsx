@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/protectedroute";
 
 import Login from "./pages/login";
 import Dashboard from "./pages/Dashboard";
@@ -14,7 +14,7 @@ import UploadResume from "./pages/uploadResume";
 import UploadJob from "./pages/uploadjob";
 import Candidates from "./pages/candidates";
 import Ranking from "./pages/Ranking";
-import CandidateDetails from "./pages/CandidateDetails";
+import CandidateDetails from "./pages/candidatedetails";
 
 function Layout() {
   const location = useLocation();
